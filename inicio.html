@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim</title>
+
+    <style>body { 
+        background-color: rgb(50, 123, 207); 
+    }
+    </style>
+
+    <style>header { 
+        
+        font-family: 'Franklin Gothic Medium';
+        font-size: 22px;
+        text-align: center;
+    }
+    </style>
+
+    <style>nav {
+        font-family: 'Verdana';
+        font-size: 20px;
+        text-align: center;
+        
+    }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1> Página Incrível Sobre o João  <hr/>
+        </h1>
+    </header>
+
+    <nav> 
+        <a href="indice/biografia.html" > Sobre mim | </a>
+        <a href="indice/curiosidade1.html" > Curiosidade #1 | </a>
+        <a href="indice/curiosidade2.html" > Curiosidade #2 | </a>
+        <a href="indice/curiosidade3.html" > Curiosidade #3 </a>
+    
+    </nav>
+
+    <section id="conteudo"> </section>
+
+    
+    
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            link.onclick = function(e) {
+                e.preventDefault()
+
+                const conteudo = document.getElementById('conteudo')
+                fetch(link.href)
+                   .then(resp => resp.text())
+                   .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+
+
+</body>
+</html>
