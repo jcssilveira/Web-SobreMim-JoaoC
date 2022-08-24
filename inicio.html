@@ -14,6 +14,7 @@
     <style>header { 
         
         font-family: 'Franklin Gothic Medium';
+        color: white; 
         font-size: 22px;
         text-align: center;
     }
@@ -44,8 +45,42 @@
 
     <section id="conteudo"> </section>
 
+    <style>
+        .footer {
+            position: fixed;
+            left: 10px;
+            bottom: 10px;
+            width: 100%;
+            
+        }
+
+        .footer button {
+
+            background-color: rgb(48, 48, 48); 
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+        
+    <div class="footer">
+        <button onclick = "mudaCor()" type="button">Modo escuro</button> 
+    </div>
+
+    <script> 
+        function mudaCor() { 
+            const claro = "rgb(50, 123, 207)"; 
+            const escuro = "rgb(33, 48, 65)";
+            document.body.style.background == claro? document.body.style.background = escuro : document.body.style.background = claro;
+        }
+    </script>
+
     
-    
+        
     <script>
         document.querySelectorAll('a').forEach(link => {
             link.onclick = function(e) {
